@@ -26,7 +26,7 @@ from sklearn.svm import SVC, LinearSVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
-dataset_paths = sorted(glob.glob('datasets2/*.csv'))
+dataset_paths = sorted(glob.glob('datasets/*.csv'))
 job_number = 1
 classifiers = [
     RandomForestClassifier(),
