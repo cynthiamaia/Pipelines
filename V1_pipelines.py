@@ -2,7 +2,7 @@ import sys
 argv = sys.argv
 
 file_path = argv[1]
-classificador = argv[2]
+string_classif = argv[2]
 from sklearn.decomposition import KernelPCA
 from sklearn.preprocessing import (StandardScaler,MinMaxScaler,RobustScaler,MaxAbsScaler,Normalizer,PowerTransformer,QuantileTransformer)
 from sklearn.feature_selection import SelectFromModel
@@ -37,6 +37,59 @@ import time
 
 import logging
 from datetime import datetime
+
+if str(string_classif) == 'RandomForestClassifier':
+    classificador = RandomForestClassifier()
+elif str(string_classif) == 'AdaBoostClassifier':
+    classificador = AdaBoostClassifier()
+elif str(string_classif) == 'BernoulliNB':
+    classificador = BernoulliNB()
+elif str(string_classif) == 'DecisionTreeClassifier':
+    classificador = DecisionTreeClassifier()
+elif str(string_classif) == 'ExtraTreesClassifier':
+    classificador = ExtraTreesClassifier()
+elif str(string_classif) == 'GaussianNB':
+    classificador = GaussianNB()
+elif str(string_classif) == 'HistGradientBoostingClassifier':
+    classificador = HistGradientBoostingClassifier()
+elif str(string_classif) == 'KNeighborsClassifier':
+    classificador = KNeighborsClassifier()
+elif str(string_classif) == 'LinearDiscriminantAnalysis':
+    classificador = LinearDiscriminantAnalysis()
+elif str(string_classif) == 'LinearSVC':
+    classificador = LinearSVC()
+elif str(string_classif) == 'SVC':
+    classificador = SVC()
+elif str(string_classif) == 'MLPClassifier':
+    classificador = MLPClassifier()
+elif str(string_classif) == 'MultinomialNB':
+    classificador = MultinomialNB()
+elif str(string_classif) == 'PassiveAggressiveClassifier':
+    classificador = PassiveAggressiveClassifier()
+elif str(string_classif) == 'QuadraticDiscriminantAnalysis':
+    classificador = QuadraticDiscriminantAnalysis()
+elif str(string_classif) == 'SGDClassifier':
+    classificador = SGDClassifier()
+
+# classificador = RandomForestClassifier()
+#classificador = [
+#    RandomForestClassifier(),
+#    AdaBoostClassifier(),
+#    BernoulliNB(),
+#    DecisionTreeClassifier(),
+#    ExtraTreesClassifier(),
+#    GaussianNB(),
+#    HistGradientBoostingClassifier(),
+#    KNeighborsClassifier(),
+#    LinearDiscriminantAnalysis(),
+#    LinearSVC(),
+#    SVC(),
+#    MLPClassifier(),
+#    MultinomialNB(),
+#    PassiveAggressiveClassifier(),
+#    QuadraticDiscriminantAnalysis(),
+#    SGDClassifier()
+#]
 
 log_directory = 'logs'
 if not os.path.exists(log_directory):
